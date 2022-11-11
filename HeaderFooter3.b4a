@@ -1,0 +1,93 @@
+﻿Build1=Default,b4a.example
+File1=clv.bal
+File10=sectionfooter.png
+File11=sectionheader.png
+File2=collapsed2.png
+File3=content2.json
+File4=edithead.bal
+File5=editline.bal
+File6=exchangeline.bal
+File7=inputbox.bal
+File8=Layout.bal
+File9=main.bal
+FileGroup1=Default Group
+FileGroup10=Default Group
+FileGroup11=Default Group
+FileGroup2=Default Group
+FileGroup3=Default Group
+FileGroup4=Default Group
+FileGroup5=Default Group
+FileGroup6=Default Group
+FileGroup7=Default Group
+FileGroup8=Default Group
+FileGroup9=Default Group
+Group=Default Group
+Library1=byteconverter
+Library2=core
+Library3=inputmenu
+Library4=json
+Library5=xcustomlistview
+Library6=xui
+Library7=xui views
+ManifestCode='This code will be applied to the manifest file during compilation.~\n~'You do not need to modify it in most cases.~\n~'See this link for for more information: https://www.b4x.com/forum/showthread.php?p=78136~\n~AddManifestText(~\n~<uses-sdk android:minSdkVersion="14" android:targetSdkVersion="29"/>~\n~<supports-screens android:largeScreens="true" ~\n~    android:normalScreens="true" ~\n~    android:smallScreens="true" ~\n~    android:anyDensity="true"/>)~\n~SetApplicationAttribute(android:icon, "@drawable/icon")~\n~SetApplicationAttribute(android:label, "$LABEL$")~\n~CreateResourceFromFile(Macro, Themes.LightTheme)~\n~'End of default text.~\n~
+Module1=clsMapOfList
+Module2=modCommon
+Module3=SectionXCLV
+Module4=Starter
+NumberOfFiles=11
+NumberOfLibraries=7
+NumberOfModules=4
+Version=11.2
+@EndOfDesignText@
+#Region  Project Attributes 
+	#ApplicationLabel: B4A Example
+	#VersionCode: 1
+	#VersionName: 
+	'SupportedOrientations possible values: unspecified, landscape or portrait.
+	#SupportedOrientations: unspecified
+	#CanInstallToExternalStorage: False
+#End Region
+
+#Region  Activity Attributes 
+	#FullScreen: False
+	#IncludeTitle: True
+#End Region
+
+Sub Process_Globals
+	'These global variables will be declared once when the application starts.
+	'These variables can be accessed from all modules.
+	' Private xui As XUI <-- Not necessary here
+End Sub
+
+Sub Globals
+	'These global variables will be redeclared each time the activity is created.
+	Private SectionXCLV1 As SectionXCLV
+End Sub
+
+Sub Activity_Create(FirstTime As Boolean) 'ignore
+	Activity.LoadLayout("main.bal")
+	Activity.AddMenuItem("load", "load")
+	Activity.AddMenuItem("add", "add")
+	Activity.AddMenuItem("test callback", "testcallback")
+End Sub
+
+Sub Activity_Resume
+	
+End Sub
+
+Sub Activity_Pause (UserClosed As Boolean)
+
+End Sub
+
+Sub load_click
+	SectionXCLV1.LoadData
+End Sub
+
+Sub add_Click
+	SectionXCLV1.AddSingleData
+End Sub
+
+Sub testcallback_Click
+	' to test whether chain callback is valid
+	SectionXCLV1.testCallback
+End Sub
